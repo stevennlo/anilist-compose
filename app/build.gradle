@@ -1,0 +1,103 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.apollographql.apollo3'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.example.anilist'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId appId
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn", "-Xjvm-default=all"]
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.1'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+apollo {
+    packageName.set("${appId}.data.remote.graphql")
+    srcDir(file("src/main/java/com/example/anilist/data/remote/graphql"))
+    generateOptionalOperationVariables.set(false)
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
+    implementation 'androidx.activity:activity-compose:1.6.1'
+
+    implementation 'io.coil-kt:coil-compose:2.2.2'
+
+    implementation "androidx.compose.ui:ui:$composeUiVersion"
+    implementation "androidx.compose.ui:ui-tooling-preview:$composeUiVersion"
+    implementation "androidx.compose.runtime:runtime-livedata:$composeUiVersion"
+    implementation "androidx.compose.material:material:$composeUiVersion"
+    implementation "androidx.compose.material:material-icons-extended:$composeUiVersion"
+    implementation "androidx.compose.material3:material3:$material3Version"
+
+    implementation "com.google.accompanist:accompanist-flowlayout:0.28.0"
+
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    implementation "com.apollographql.apollo3:apollo-runtime:$apolloVersion"
+
+    implementation 'com.google.code.gson:gson:2.10'
+
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+    implementation platform('com.squareup.okhttp3:okhttp-bom:4.10.0')
+    implementation 'com.squareup.okhttp3:okhttp'
+    implementation 'com.squareup.okhttp3:logging-interceptor'
+
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeUiVersion"
+    debugImplementation "androidx.compose.ui:ui-tooling:$composeUiVersion"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$composeUiVersion"
+}

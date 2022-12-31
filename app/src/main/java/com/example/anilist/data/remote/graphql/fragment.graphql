@@ -1,0 +1,48 @@
+fragment media on Media {
+    id
+    title {
+        userPreferred
+    }
+    coverImage {
+        extraLarge
+        large
+        color
+    }
+    startDate {
+        year
+        month
+        day
+    }
+    endDate {
+        year
+        month
+        day
+    }
+    bannerImage
+    season
+    seasonYear
+    description
+    type
+    format
+    status(version: 2)
+    episodes
+    duration
+    chapters
+    genres
+    trending
+    averageScore
+    popularity
+    favourites
+    nextAiringEpisode {
+        id
+        airingAt
+        timeUntilAiring
+        episode
+    }
+    studios(isMain: true) {
+        nodes {
+            id
+            name
+        }
+    }
+}

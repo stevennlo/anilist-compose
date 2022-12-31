@@ -1,0 +1,37 @@
+query DetailMedia($id: Int) {
+    Media(id: $id) {
+        ...media
+        characters(perPage: 12, sort: [ROLE, RELEVANCE, ID]) {
+            edges {
+                id
+                role
+                voiceActors(language: JAPANESE, sort: [RELEVANCE, ID]) {
+                    id
+                    name {
+                        userPreferred
+                    }
+                    language: languageV2
+                    image {
+                        large
+                    }
+                }
+                node {
+                    id
+                    name {
+                        userPreferred
+                    }
+                    image {
+                        large
+                    }
+                }
+            }
+        }
+        recommendations(perPage: 12, sort: [RATING_DESC, ID]) {
+            nodes {
+                mediaRecommendation {
+                    ...media
+                }
+            }
+        }
+    }
+}

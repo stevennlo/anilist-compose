@@ -1,0 +1,8 @@
+# noinspection GraphQLUnresolvedReference
+query SearchMedia($keyword: String @optional, $season: MediaSeason @optional, $seasonYear: Int @optional, $sort: [MediaSort] @optional) {
+    Page(page: 1) {
+        media(search: $keyword, season: $season, seasonYear: $seasonYear, sort: $sort, type: ANIME, isAdult: false) {
+            ...media
+        }
+    }
+}

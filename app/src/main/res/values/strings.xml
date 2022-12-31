@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">AniList</string>
+    <string name="view_all_label">View All</string>
+    <string name="trending_now_label">Trending Now</string>
+    <string name="popular_this_season_label">Popular This Season</string>
+    <string name="upcoming_next_season_label">Upcoming Next Season</string>
+    <string name="all_time_popular_label">All Time Popular</string>
+    <string name="general_error_message">Something went wrong. Try again later.</string>
+    <string name="network_error_message">Network error. Check your internet connection.</string>
+    <string name="about_action_content_desc">about_page</string>
+    <string name="search_hint">Search</string>
+    <string name="empty_description">Looks empty!</string>
+    <string name="lets_search_description">Let\'s search something!</string>
+    <string name="airing_description" tools:ignore="PluralsCandidate">Ep %d airing in</string>
+    <string name="airing_label">Airing</string>
+    <string name="to_be_announced_label">TBA</string>
+    <string name="filter_action_content_desc">Filter action</string>
+    <string name="navigate_up_action_content_desc">Navigate up action</string>
+    <string name="profile_image_content_desc">Profile image</string>
+    <string name="logo_content_desc">Logo</string>
+    <string name="search_action_content_desc">Search action</string>
+    <string name="media_image_content_desc">Media image</string>
+    <string name="filter_label">Filter</string>
+    <string name="season_label">Season</string>
+    <string name="sort_label">Sort</string>
+    <string name="year_label">Year</string>
+    <string name="only_favorites_label">Only my favorites</string>
+    <string name="apply_action_content_desc">Apply action</string>
+    <string name="description_label">Description</string>
+    <string name="genres_label">Genres</string>
+    <string name="format_label">Format</string>
+    <string name="episode_duration_label">Episode Duration</string>
+    <string name="status_label">Status</string>
+    <string name="popularity_label">Popularity</string>
+    <string name="start_date_label">Start Date</string>
+    <string name="interests_label">Interests</string>
+    <string name="studios_label">Studios</string>
+    <string name="episode_label">Episodes</string>
+    <string name="average_score_label">Average Score</string>
+    <string name="favorites_label">Favorites</string>
+    <string name="recommendations_label">Recommendations</string>
+    <string name="banner_image_content_desc">Banner image</string>
+    <string name="favorite_action_content_desc">Favorite action</string>
+    <string name="character_image_content_desc">Character image</string>
+    <string name="characters_label">Characters</string>
+    <string name="unfavorite_action_content_desc">Un-favorite action</string>
+    <string name="my_favorite_label">My Favorite</string>
+    <string name="remove_filter_content_desc">Remove filter</string>
+    <plurals name="episode_label">
+        <item quantity="one">%d episode</item>
+        <item quantity="other">%d episodes</item>
+    </plurals>
+    <plurals name="day_label">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="hour_label">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="minute_label">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+</resources>
