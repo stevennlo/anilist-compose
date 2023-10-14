@@ -146,15 +146,15 @@ fun LandingScreen(modifier: Modifier = Modifier, viewModel: LandingViewModel = v
                             contentDescription = stringResource(R.string.search_action_content_desc)
                         )
                     }
-                    IconButton(onClick = {
-                        val intent = Intent(context, AboutActivity::class.java)
-                        context.startActivity(intent)
-                    }) {
-                        Icon(
-                            imageVector = Icons.Rounded.AssignmentInd,
-                            contentDescription = stringResource(R.string.about_action_content_desc)
-                        )
-                    }
+//                    IconButton(onClick = {
+//                        val intent = Intent(context, AboutActivity::class.java)
+//                        context.startActivity(intent)
+//                    }) {
+//                        Icon(
+//                            imageVector = Icons.Rounded.AssignmentInd,
+//                            contentDescription = stringResource(R.string.about_action_content_desc)
+//                        )
+//                    }
                 }
             )
         }
