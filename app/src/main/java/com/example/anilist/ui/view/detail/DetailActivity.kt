@@ -118,7 +118,7 @@ fun DetailScreen(modifier: Modifier = Modifier, viewModel: DetailViewModel = vie
     val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
     val nextAiring = media.nextAiringEpisode?.let {
         val days = (it.timeUntilAiring / 86400).toInt()
-        val remainHours = (it.timeUntilAiring / 3600).toInt() % 60
+        val remainHours = (it.timeUntilAiring / 3600).toInt() % 24
         val formattedTime = mutableListOf<String>()
         if (days != 0) {
             formattedTime.add("${days}d")
@@ -255,13 +255,11 @@ fun DetailScreen(modifier: Modifier = Modifier, viewModel: DetailViewModel = vie
                 ) {
                     if (nextAiring != null) {
                         item {
-                            Column {
-                                InformationText(
-                                    title = stringResource(R.string.airing_label),
-                                    value = nextAiring,
-                                    valueTextColor = MaterialTheme.colorScheme.primary
-                                )
-                            }
+                            InformationText(
+                                title = stringResource(R.string.airing_label),
+                                value = nextAiring,
+                                valueTextColor = MaterialTheme.colorScheme.primary
+                            )
                         }
                     }
                     items(information) { data ->

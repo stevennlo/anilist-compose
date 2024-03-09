@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import com.example.anilist.ui.view.detail.DetailActivity.Companion as DetailActivity1
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
@@ -23,7 +22,7 @@ class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val media: Media? = savedStateHandle[DetailActivity1.EXTRA_MEDIA]
+    private val media: Media? = savedStateHandle[DetailActivity.EXTRA_MEDIA]
     private val _uiState = MutableStateFlow(DetailActivity.UiState(media = media))
     val uiState: StateFlow<DetailActivity.UiState> = _uiState
 
